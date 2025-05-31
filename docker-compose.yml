@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  cosplanner.backend:
+    build:
+      context: cosplanner-back
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./cosplanner-back:/var/www/html
+    command: php artisan serve --host=0.0.0.0 --port=8000
+  cosplanner.frontend:
+    build:
+      context: ./cosplanner-front
+      dockerfile: Dockerfile
+    container_name: cosplanner-front
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./cosplanner-front:/app
+    command: npm run dev -- --host
+  cosplanner.db:
+    image: mysql:8.0
+    container_name: cosplanner-db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+        MYSQL_DATABASE: '${MYSQL_DATABASE}'
+        MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+        MYSQL_ROOT_HOST: '%'
+        MYSQL_USER: '${MYSQL_USER}'
+        MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - '8080:80'
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - cosplanner.backend
+volumes:
+  db_data:

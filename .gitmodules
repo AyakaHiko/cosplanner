@@ -1,0 +1,6 @@
+[submodule "cosplanner-front"]
+	path = cosplanner-front
+	url = https://github.com/AyakaHiko/cosplanner-front.git
+[submodule "cosplanner-back"]
+	path = cosplanner-back
+	url = https://github.com/AyakaHiko/cosplanner-back.git
