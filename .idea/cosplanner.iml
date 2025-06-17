@@ -122,6 +122,16 @@
       <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/namshi/jose" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/php-open-source-saver/jwt-auth" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/firebase/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/cosplanner-back/vendor/phpseclib/phpseclib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
