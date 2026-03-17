@@ -1,4 +1,4 @@
 run:
-	docker-compose up -d
+	docker compose up -d
 stop:
-	docker-compose stop -d
+	docker compose stop -d

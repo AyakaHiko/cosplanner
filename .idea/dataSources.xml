@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/cosplanner</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="cosplanner@localhost [2]" uuid="05517f44-c432-41b4-a553-c30db1d1cab6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5433/cosplanner</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
