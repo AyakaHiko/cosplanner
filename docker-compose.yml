@@ -1,5 +1,7 @@
 services:
   cosplanner.backend:
+    env_file:
+      - ./cosplanner-back/.env.dev
     build:
       context: cosplanner-back
       dockerfile: Dockerfile.dev
@@ -7,8 +9,12 @@ services:
       - "8000:8000"
     volumes:
       - ./cosplanner-back:/var/www/html/
-    command: php artisan serve --host=0.0.0.0 --port=8000
+      - backend_vendor:/var/www/html/vendor
+
+    command: sh -c "composer install && php artisan serve --host=0.0.0.0 --port=8000"
   cosplanner.frontend:
+    env_file:
+      - ./cosplanner-front/.env.dev
     build:
       context: ./cosplanner-front
       dockerfile: Dockerfile.dev
@@ -17,6 +23,8 @@ services:
       - "5173:5173"
     volumes:
       - ./cosplanner-front:/front
+      - frontend_node_modules:/front/node_modules
+    command: sh -c "npm install && npm run dev -- --host"
   cosplanner.db:
     image: postgres:16
     container_name: cosplanner-db
@@ -30,3 +38,5 @@ services:
       - db_postgres_data:/var/lib/postgresql/data
 volumes:
   db_postgres_data:
+  frontend_node_modules:
+  backend_vendor:
